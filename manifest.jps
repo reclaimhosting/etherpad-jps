@@ -1,0 +1,31 @@
+type: install
+id: etherpad
+name: Etherpad
+homepage: https://etherpad.org/
+logo: images/etherpad-logo.png
+
+categories: 
+- apps/collaboration
+- apps/popular
+- apps/e-learning
+
+description: 
+  text: Etherpad is a highly customizable Open Source online editor providing collaborative editing in really real-time.
+
+nodes:
+  nodeType: docker
+  nodeGroup: cp
+  fixedCloudlets: 1
+  flexibleCloudlets: 8
+  image: etherpad/etherpad:latest
+  env:
+    SUPPRESS_ERRORS_IN_PAD_TEXT: true
+  displayName: Etherpad Server
+  
+ssl: true
+skipNodeEmails: true
+
+success: | 
+  **Etherpad Server**: [https://${env.domain}/](https://${env.domain}/)  
+  
+  It may take several minutes for your environment to be ready. Read more on customizing your install using environment variables at [https://github.com/ether/etherpad-lite/blob/develop/doc/docker.md](https://github.com/ether/etherpad-lite/blob/develop/doc/docker.md)
