@@ -3,6 +3,7 @@ id: etherpad
 name: Etherpad
 homepage: https://etherpad.org/
 logo: images/etherpad-logo.png
+baseUrl: https://raw.githubusercontent.com/timmmmyboy/etherpad-jps/master
 
 categories: 
 - apps/collaboration
