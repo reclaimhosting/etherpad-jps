@@ -3,7 +3,7 @@ id: etherpad
 version: '1.0'
 appVersion: latest
 name: Etherpad
-logo: https://raw.githubusercontent.com/reclaimhosting/etherpad-jps/master/images/etherpad-logo.png
+logo: https://raw.githubusercontent.com/reclaimhosting/etherpad-jps/master/logo.png
 homepage: https://etherpad.org/
 categories: 
 - apps/collaboration
@@ -53,6 +53,7 @@ actions:
         cd ${globals.path}
         git clone ${globals.repo} --depth 1 .
         rm -rf .git
+        rm logo.png
         rm manifest.yaml
         sed -i \
         -e "s|DOMAIN=.*|DOMAIN=${env.domain}|" \
