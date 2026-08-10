@@ -15,7 +15,7 @@ description:
 globals:
   shortname: etherpad
   path: /root/etherpad
-  repo: https://github.com/etherpad/jps
+  repo: https://github.com/reclaimhosting/etherpad-jps
   adminPass: ${fn.password}
   pgPass: ${fn.password}
 
