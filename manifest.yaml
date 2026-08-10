@@ -58,8 +58,8 @@ actions:
         sed -i \
         -e "s|DOMAIN=.*|DOMAIN=${env.domain}|" \
         -e "s|EMAIL=.*|EMAIL=${user.email}|" \
-        -e "s|ADMIN_PASSWORD=.*|ADMIN_PASSWORD=${global.adminPass}|" \
-        -e "s|DB_PASS=.*|DB_PASS=${global.pgPass}|" \
+        -e "s|ADMIN_PASSWORD=.*|ADMIN_PASSWORD=${globals.adminPass}|" \
+        -e "s|DB_PASS=.*|DB_PASS=${globals.pgPass}|" \
         .env
         docker-compose up -d
     - env.file.AddFavorite:
