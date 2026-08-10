@@ -22,24 +22,8 @@ Installing is as easy as setting an environment name and region for the install.
 
 ![Screen Shot 2020-06-04 at 11.37.51 AM|690x454](https://community.reclaimhosting.com/uploads/default/optimized/2X/3/3dfc8787b2ab0962345cb354c06de781eb1f2618_2_1380x908.jpeg) 
 
-Our implementation of Etherpad uses Docker and you can customize your install in a few different ways. The primary way of adjusting settings is with the use of environment variables. Etherpad has these options documented at [https://github.com/ether/etherpad-lite/blob/develop/doc/docker.md](https://github.com/ether/etherpad-lite/blob/develop/doc/docker.md). To add variables to your container, after install you will click the gear icon and select **Variables** where you can add your own settings in key/value format.
+Our implementation of Etherpad uses Docker and you can customize your install in a few different ways. The primary way of adjusting settings is with the use of environment variables. Etherpad has these options documented at [https://github.com/ether/etherpad-lite/blob/develop/doc/docker.md](https://github.com/ether/etherpad-lite/blob/develop/doc/docker.md). To add variables to your container, edit the file at `/root/etherpad/.env` and add new variables to the bottom of the file. After saving your changes to the file, you can stop and start your environment from the Reclaim Cloud dashboard, or via the command line (`docker compose down && docker compose up -d`) to apply your changes.
 
-![Screen Shot 2020-06-04 at 11.35.48 AM|690x71](https://community.reclaimhosting.com/uploads/default/original/2X/5/5c83a50a26a88f027ee4c0dfd4e13973df38f1ed.png) 
-
-![Screen Shot 2020-06-04 at 11.56.13 AM|690x135](https://community.reclaimhosting.com/uploads/default/original/2X/e/eb6da32bfe50809404236dcdcf07c1f754cebd33.png) 
-
-You can also edit the file at /opt/etherpad-lite/settings.json to manually update values (though we strongly recommend using environment variables as opposed to manual file editing).
-
-![Screen Shot 2020-06-04 at 11.39.32 AM|659x135](https://community.reclaimhosting.com/uploads/default/original/2X/d/daf85a5ea65f4321e93f5c49477a135258903573.png) 
-
-![Screen Shot 2020-06-04 at 11.53.35 AM|690x364](https://community.reclaimhosting.com/uploads/default/original/2X/e/ea3fba40c36550def6600c8cebae4e8679f8652e.png) 
-
-![Screen Shot 2020-06-04 at 11.47.32 AM|690x473](https://community.reclaimhosting.com/uploads/default/original/2X/a/a2ac77fa4782c4522ea514303c6300f2981316b8.png) 
-
-With any change to variables or directly to the settings.json file you will need to restart the server for those changes to take effect.
-
-![Screen Shot 2020-06-04 at 11.37.30 AM|572x134](https://community.reclaimhosting.com/uploads/default/original/2X/6/6f90d6649b3978d0fc0dfd464a5264c37474d5f5.png) 
-
-Etherpad also has an admin interface at /admin that you can access (make sure you set the ADMIN_PASSWORD variable) to manage the software including plugin installation.
+Etherpad also has an admin interface at /admin that you can access (use the ADMIN_PASSWORD to log in) to manage the software including plugin installation.
 
 ![Screen Shot 2020-06-04 at 12.00.39 PM|690x414](https://community.reclaimhosting.com/uploads/default/optimized/2X/1/1911fb5df7f598171dd8f432922763fe3606619d_2_1380x828.png)
