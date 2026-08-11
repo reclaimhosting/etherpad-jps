@@ -22,8 +22,6 @@ Installing is as easy as setting an environment name and region for the install.
 
 ![Screen Shot 2020-06-04 at 11.37.51 AM|690x454](https://community.reclaimhosting.com/uploads/default/optimized/2X/3/3dfc8787b2ab0962345cb354c06de781eb1f2618_2_1380x908.jpeg) 
 
-Our implementation of Etherpad uses Docker and you can customize your install in a few different ways. The primary way of adjusting settings is with the use of environment variables. Etherpad has these options documented at [https://github.com/ether/etherpad-lite/blob/develop/doc/docker.md](https://github.com/ether/etherpad-lite/blob/develop/doc/docker.md). To add variables to your container, edit the file at `/root/etherpad/.env` and add new variables to the bottom of the file. After saving your changes to the file, you can stop and start your environment from the Reclaim Cloud dashboard, or via the command line (`docker compose down && docker compose up -d`) to apply your changes.
-
 Etherpad also has an admin interface at /admin that you can access (use the `ADMIN_PASSWORD` to log in) to manage the software including plugin installation.
 
 ![Screen Shot 2020-06-04 at 12.00.39 PM|690x414](https://community.reclaimhosting.com/uploads/default/optimized/2X/1/1911fb5df7f598171dd8f432922763fe3606619d_2_1380x828.png)
