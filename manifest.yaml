@@ -132,9 +132,13 @@ addons:
             docker-compose up -d --force-recreate
 success: | 
   **${env.displayName}**: [https://${env.domain}/](https://${env.domain}/)
+  
   **Admin URL**: [https://${env.domain}/admin](https://${env.domain}/admin)
+  
   **Admin Username**: `admin`
+  
   **Admin Password**: `${global.adminPass}`
+  
   - Admin password can be changed using the **Change Password** Add-On.
   - If you want to map a custom domain, point an A record at **${nodes.cp.extIPs}** then use the **Domain Configuration** Add-On to change the domain name and issue a new Let's Encrypt cert.
   - Use the **Update** add-on to upgrade to the lastest version of the application.
