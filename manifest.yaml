@@ -26,7 +26,7 @@ nodes:
   fixedcloudlets: 1
   extip: true
   displayName: AppServer
-  addons: [change-domain, change-password, update]
+  addons: [change-domain, update]
   volumes: ["${globals.path}"]
 
 settings:
@@ -90,28 +90,6 @@ addons:
             .env
             docker-compose up -d --force-recreate
 
-  - id: change-password
-    name: Change Password
-    description: Change the admin password for Etherpad.
-    permanent: true
-    buttons:
-      - confirmText: Are you sure you want to proceed?
-        loadingText: Changing password...
-        action: changePassword
-        caption: Change
-        successText: The admin password has been updated successfully!
-        settings: adminPass
-        title: Please specify the new password
-
-    actions:
-      changePassword:
-        - cmd[cp]: |-
-            cd ${globals.path}
-            sed -i \
-            -e "s|ADMIN_PASS=.*|ADMIN_PASS=${settings.adminPass}|" \
-            .env
-            docker-compose up -d --force-recreate
-
   - id: update
     name: Update
     description: Pull the latest version of docker containers
@@ -139,6 +117,6 @@ success: |
   
   **Admin Password**: `${globals.adminPass}`
   
-  - Admin password can be changed using the **Change Password** Add-On.
+  - The password can be changed by editing the file at `/root/etherpad/.env`. After editing the ADMIN_PASSWORD environment variable, stop and start the environment.
   - If you want to map a custom domain, point an A record at **${nodes.cp.extIPs}** then use the **Domain Configuration** Add-On to change the domain name and issue a new Let's Encrypt cert.
   - Use the **Update** add-on to upgrade to the lastest version of the application.
